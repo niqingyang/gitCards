@@ -24,9 +24,9 @@ window.reloadGitCards = function () {
                                     success: function (result) {
                                         let json = result;
                                         content = "";
-                                        content += `<a href='${json.owner.html_url}' target='_blank' class='ownername'>${json.owner.login}/<a href='${json.html_url}' target='_blank' class='reponame'>${json.name}</a></a>`;
+                                        content += `<a href='${json.owner.html_url}' target='_blank' class='ownername'>${json.owner.login}</a><span class="separator">/</span><a href='${json.html_url}' target='_blank' class='reponame'>${json.name}</a>`;
                                         content += `<p class='desc'>${!!json.description ? json.description : "暂无描述"}${!!json.homepage ? "<a href='" + json.homepage + "' target='_blank'>" + json.homepage + "</a>" : ""}</p>`;
-                                        content += `<div class='gitdata'><git-stars title='Stars'>${json.stargazers_count}</git-stars><git-forks title='Forks'>${json.forks_count}</git-forks><a class='viewmore' href='${json.html_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
+                                        content += `<div class='gitdata'><div class="git-starts-fork"><git-stars title='Stars'>${json.stargazers_count}</git-stars><git-forks title='Forks'>${json.forks_count}</git-forks></div><a class='viewmore' href='${json.html_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
                                         $(card).children(".gitcard-body").html(content);
                                     },
                                     error: function () {
@@ -48,9 +48,9 @@ window.reloadGitCards = function () {
                                             return;
                                         }
                                         content = "";
-                                        content += `<a href='${'https://dev.tencent.com/u/' + json.data.owner_user_name}' target='_blank' class='ownername'>${json.data.owner_user_name}/<a href='${json.data.https_url}' target='_blank' class='reponame'>${json.data.display_name}</a></a>`;
+                                        content += `<a href='${'https://dev.tencent.com/u/' + json.data.owner_user_name}' target='_blank' class='ownername'>${json.data.owner_user_name}</a><span class="separator">/</span><a href='${json.data.https_url}' target='_blank' class='reponame'>${json.data.display_name}</a>`;
                                         content += `<p class='desc'>${!!json.data.description ? json.data.description : "暂无描述"}</p>`;
-                                        content += `<div class='gitdata'><git-stars title='Stars'>${json.data.star_count}</git-stars><git-forks title='Forks'>${json.data.fork_count}</git-forks><a class='viewmore' href='${json.data.https_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
+                                        content += `<div class='gitdata'><div class="git-starts-fork"><git-stars title='Stars'>${json.data.star_count}</git-stars><git-forks title='Forks'>${json.data.fork_count}</git-forks></div><a class='viewmore' href='${json.data.https_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
                                         $(card).children(".gitcard-body").html(content);
                                     },
                                     error: function () {
@@ -68,9 +68,9 @@ window.reloadGitCards = function () {
                                     success: function (result) {
                                         let json = result;
                                         content = "";
-                                        content += `<a href='${json.owner.html_url}' target='_blank' class='ownername'>${json.owner.login}/<a href='${json.html_url}' target='_blank' class='reponame'>${json.path}</a></a>`;
+                                        content += `<a href='${json.owner.html_url}' target='_blank' class='ownername'>${json.owner.login}</a><span class="separator">/</span><a href='${json.html_url}' target='_blank' class='reponame'>${json.path}</a>`;
                                         content += `<p class='desc'>${!!json.description ? json.description : "暂无描述"}${!!json.homepage ? "<a href='" + json.homepage + "' target='_blank'>" + json.homepage + "</a>" : ""}</p>`;
-                                        content += `<div class='gitdata'><git-stars title='Stars'>${json.stargazers_count}</git-stars><git-forks title='Forks'>${json.forks_count}</git-forks><a class='viewmore' href='${json.html_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
+                                        content += `<div class='gitdata'><div class="git-starts-fork"><git-stars title='Stars'>${json.stargazers_count}</git-stars><git-forks title='Forks'>${json.forks_count}</git-forks></div><a class='viewmore' href='${json.html_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
                                         $(card).children(".gitcard-body").html(content);
                                     },
                                     error: function () {
@@ -88,9 +88,9 @@ window.reloadGitCards = function () {
                                     success: function (result) {
                                         let json = result;
                                         content = "";
-                                        content += `<a href='${"https://gitlab.com/" + json.namespace.path}' target='_blank' class='ownername'>${json.namespace.path}/<a href='${json.web_url}' target='_blank' class='reponame'>${json.path}</a></a>`;
+                                        content += `<a href='${"https://gitlab.com/" + json.namespace.path}' target='_blank' class='ownername'>${json.namespace.path}</a><span class="separator">/</span><a href='${json.web_url}' target='_blank' class='reponame'>${json.path}</a>`;
                                         content += `<p class='desc'>${!!json.description ? json.description : "暂无描述"}</p>`;
-                                        content += `<div class='gitdata'><git-stars title='Stars'>${json.star_count}</git-stars><git-forks title='Forks'>${json.forks_count}</git-forks><a class='viewmore' href='${json.web_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
+                                        content += `<div class='gitdata'><div class="git-starts-fork"><git-stars title='Stars'>${json.star_count}</git-stars><git-forks title='Forks'>${json.forks_count}</git-forks></div><a class='viewmore' href='${json.web_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
                                         $(card).children(".gitcard-body").html(content);
                                     },
                                     error: function () {
@@ -132,7 +132,7 @@ window.reloadGitCards = function () {
                             success: function (result) {
                                 let json = result;
                                 content = "";
-                                content += `<a href='${json.owner.html_url}' target='_blank' class='ownername'>${json.owner.login}/<a href='${json.html_url}' target='_blank' class='reponame'>${json.name}</a></a>`;
+                                content += `<a href='${json.owner.html_url}' target='_blank' class='ownername'>${json.owner.login}</a><span class="separator">/</span><a href='${json.html_url}' target='_blank' class='reponame'>${json.name}</a>`;
                                 content += `<p class='desc'>${!!json.description ? json.description : "暂无描述"}${!!json.homepage ? "<a href='" + json.homepage + "' target='_blank'>" + json.homepage + "</a>" : ""}</p>`;
                                 content += `<div class='gitdata'><git-stars title='Stars'>${json.stargazers_count}</git-stars><git-forks title='Forks'>${json.forks_count}</git-forks><a class='viewmore' href='${json.html_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
                                 that.children(".gitcard-body").html(content);
@@ -156,7 +156,7 @@ window.reloadGitCards = function () {
                                     return;
                                 }
                                 content = "";
-                                content += `<a href='${'https://dev.tencent.com/u/' + json.data.owner_user_name}' target='_blank' class='ownername'>${json.data.owner_user_name}/<a href='${json.data.https_url}' target='_blank' class='reponame'>${json.data.display_name}</a></a>`;
+                                content += `<a href='${'https://dev.tencent.com/u/' + json.data.owner_user_name}' target='_blank' class='ownername'>${json.data.owner_user_name}</a><span class="separator">/</span><a href='${json.data.https_url}' target='_blank' class='reponame'>${json.data.display_name}</a>`;
                                 content += `<p class='desc'>${!!json.data.description ? json.data.description : "暂无描述"}</p>`;
                                 content += `<div class='gitdata'><git-stars title='Stars'>${json.data.star_count}</git-stars><git-forks title='Forks'>${json.data.fork_count}</git-forks><a class='viewmore' href='${json.data.https_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
                                 that.children(".gitcard-body").html(content);
@@ -176,7 +176,7 @@ window.reloadGitCards = function () {
                             success: function (result) {
                                 let json = result;
                                 content = "";
-                                content += `<a href='${json.owner.html_url}' target='_blank' class='ownername'>${json.owner.login}/<a href='${json.html_url}' target='_blank' class='reponame'>${json.path}</a></a>`;
+                                content += `<a href='${json.owner.html_url}' target='_blank' class='ownername'>${json.owner.login}</a><span class="separator">/</span><a href='${json.html_url}' target='_blank' class='reponame'>${json.path}</a>`;
                                 content += `<p class='desc'>${!!json.description ? json.description : "暂无描述"}${!!json.homepage ? "<a href='" + json.homepage + "' target='_blank'>" + json.homepage + "</a>" : ""}</p>`;
                                 content += `<div class='gitdata'><git-stars title='Stars'>${json.stargazers_count}</git-stars><git-forks title='Forks'>${json.forks_count}</git-forks><a class='viewmore' href='${json.html_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
                                 that.children(".gitcard-body").html(content);
@@ -196,7 +196,7 @@ window.reloadGitCards = function () {
                             success: function (result) {
                                 let json = result;
                                 content = "";
-                                content += `<a href='${"https://gitlab.com/" + json.namespace.path}' target='_blank' class='ownername'>${json.namespace.path}/<a href='${json.web_url}' target='_blank' class='reponame'>${json.path}</a></a>`;
+                                content += `<a href='${"https://gitlab.com/" + json.namespace.path}' target='_blank' class='ownername'>${json.namespace.path}</a><span class="separator">/</span><a href='${json.web_url}' target='_blank' class='reponame'>${json.path}</a>`;
                                 content += `<p class='desc'>${!!json.description ? json.description : "暂无描述"}</p>`;
                                 content += `<div class='gitdata'><git-stars title='Stars'>${json.star_count}</git-stars><git-forks title='Forks'>${json.forks_count}</git-forks><a class='viewmore' href='${json.web_url}' title='前往查看' target='_blank'>\uf054</a></div>`;
                                 that.children(".gitcard-body").html(content);

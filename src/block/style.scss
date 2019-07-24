@@ -74,11 +74,11 @@
     }
 }
 
-@mixin cardStyle($color, $bgcolor, $tagname, $tagbgcolor, $tagIcon) {
-    min-height: 120px;
+@mixin cardStyle($color, $bgcolor, $tagname, $tagbgcolor, $tagIcon, $siteLinkColor) {
+    min-height: 96px;
     margin: 0 auto;
     max-width: 800px;
-    padding: 10px 25px;
+    padding: 15px 15px 50px 15px;
     border-radius: 3px;
     border-radius: $borderRadius-Size;
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New",
@@ -107,8 +107,10 @@
             position: absolute;
             top: 0px;
             right: 0px;
-            padding: 3px 5px 3px 23px;
+            padding: 4px 5px 2px 25px;;
             border-radius: 0 $borderRadius-Size;
+			background-position-x: 3px;
+			background-position-y: 4px;
         }
         .bigtext {
             color: $color;
@@ -119,13 +121,39 @@
         }
 
         a.ownername {
-            @include linkStyle(26px, rgba($color, 0.5), rgba($color, 0.6));
+			font-size: 26px;
+			display: inline;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+			box-shadow: none;
+			color: rgba($color, 0.5);
+			&:hover {
+				color: rgba($color, 0.3);
+			}
         }
+		span.separator {
+			font-size: 20px;
+			margin: 0 2px;
+			color: rgba($color, 0.5);
+		}
         a.reponame {
-            @include linkStyle(26px, rgba($color, 0.8), rgba($color, 0.9));
+			font-size: 26px;
+			display: inline;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+			box-shadow: none;
+			color: rgba($color, 1);
+			&:hover {
+				color: rgba($color, 0.8);
+			}
         }
+
+		a {
+			border-bottom: none;
+		}
+
         .desc {
-            font-size: 17px;
+            font-size: 15px;
             padding: 0;
             margin: 6px 0;
             display: block;
@@ -134,37 +162,49 @@
             color: rgba($color, 0.9);
             a {
                 margin-left: 6px;
-                @include linkStyle(17px, rgba($color, 0.7), rgba($color, 0.8));
+                @include linkStyle(14px, rgba($siteLinkColor, 1), rgba($siteLinkColor, 0.8));
+
+				&:before {
+					background-color: rgba($siteLinkColor, 0.8) !important;
+				}
             }
         }
         .gitdata {
-            git-stars,
-            git-forks {
-                font-size: 15px;
-                color: rgba($color, 0.7);
-                margin: 0 5px;
-                &:before {
-                    font: normal normal normal 14px/1 FontAwesome !important;
-                    margin-right: 2px;
-                    text-rendering: auto;
-                    -webkit-font-smoothing: antialiased;
-                    -moz-osx-font-smoothing: grayscale;
-                }
-            }
-            git-stars {
-                &:before {
-                    content: "\f005";
-                }
-            }
-            git-forks {
-                &:before {
-                    content: "\f126";
-                }
-            }
+			.git-starts-fork {
+				position: absolute;
+				left: 15px;
+				bottom: 15px;
+				line-height: 20px;
+
+				git-stars,
+				git-forks {
+					font-size: 15px;
+					color: rgba($color, 0.7);
+					margin: 0 5px;
+					&:before {
+						font: normal normal normal 14px/1 FontAwesome !important;
+						margin-right: 4px;
+						text-rendering: auto;
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+					}
+				}
+				git-stars {
+					margin-left: 0px;
+					&:before {
+						content: "\f005";
+					}
+				}
+				git-forks {
+					&:before {
+						content: "\f126";
+					}
+				}
+			}
             .viewmore {
                 font: normal normal normal 15px/1 FontAwesome !important;
                 text-decoration: none;
-                color: rgba($color, 0.7);
+                color: rgba($color, 0.5);
                 box-shadow: none;
                 margin-right: 2px;
                 text-rendering: auto;
@@ -172,10 +212,10 @@
                 -moz-osx-font-smoothing: grayscale;
                 float: right;
                 position: absolute;
-                right: 14px;
-                bottom: 14px;
+                right: 15px;
+                bottom: 15px;
                 &:hover {
-                    color: rgba($color, 0.9);
+                    color: rgba($color, 0.9) !important;
                 }
             }
         }
@@ -184,15 +224,15 @@
 
 .wp-block-gitcards-gitcards-block {
     &[data-gitsite="1"] {
-        @include cardStyle($white, $darkgrey, "GitHub", $grey, $gitHubIcon);
+        @include cardStyle($white, $darkgrey, "GitHub", $grey, $gitHubIcon, $pink);
     }
     &[data-gitsite="2"] {
-        @include cardStyle($areca, $milk, "Coding", $darkmilk, $codingIcon);
+        @include cardStyle($areca, $milk, "Coding", $darkmilk, $codingIcon, $areca);
     }
     &[data-gitsite="3"] {
-        @include cardStyle($warmwhite, $tgrass, "Gitee", $darktgrass, $giteeIcon);
+        @include cardStyle($warmwhite, $tgrass, "Gitee", $darktgrass, $giteeIcon, $warmwhite);
     }
     &[data-gitsite="4"] {
-        @include cardStyle($warmwhite, $purple, "GitLab", $darkpurple, $gitlabIcon);
+        @include cardStyle($warmwhite, $purple, "GitLab", $darkpurple, $gitlabIcon, $warmwhite);
     }
 }

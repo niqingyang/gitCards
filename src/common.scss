@@ -2,6 +2,7 @@
 $darkgrey: #414141;
 $grey: #5a5a5a;
 $white: #f4f4f4;
+$pink: #ff4081;
 
 $milk: #fce2c4;
 $darkmilk: #ffcf98;
@@ -14,7 +15,7 @@ $warmwhite: #fbfaf5;
 $purple: #856fb4;
 $darkpurple: #775cb1;
 
-$borderRadius-Size: 10px;
+$borderRadius-Size: 5px;
 
 //Functions
 @function replace($str, $sub: null, $rep: null) {
