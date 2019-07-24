@@ -7,7 +7,7 @@
     color: $color;
     &:hover {
         color: $hovercolor;
-        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 2px 0 $hovercolor;
+        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 1px 0 $hovercolor;
     }
 }
 
