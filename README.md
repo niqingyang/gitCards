@@ -1,4 +1,13 @@
-# gitCards
+[预览](/screenshot.png)
+
+<p align="center">
+    <img src="/screenshot.png" alt="wp-gitcards" align="center" />
+</p>
+<p align="center">该项目 Fork 于 gitCards 项目</p>
+
+# wp-gitcards
+
+本项目 fork 于 gitCards，按照自己喜欢的样式进行了一些细微的修改
 
 -----
 
