@@ -1,5 +1,3 @@
-[预览](/screenshot.png)
-
 <p align="center">
     <img src="/screenshot.png" alt="wp-gitcards" align="center" />
 </p>
