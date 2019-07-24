@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: wp-gitcard
+ * Plugin Name: GitCard
  * Plugin URI: https://github.com/niqingyang/wp-gitcard
  * Description: 在你的文章中插入Git仓库卡片
  * Version: 1.0.0
