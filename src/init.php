@@ -28,6 +28,13 @@ function gitcards_cgb_editor_assets()
 
 function shortcode_gitcards($atts, $content = null)
 {
+	// Scripts.
+	wp_enqueue_script('gitcards-core', GITCARDS_URL . '/js/gitcards.js', array('jquery'), true);
+	
+	// Styles.
+	wp_enqueue_style('gitcards-cgb-style-css', GITCARDS_URL . '/dist/blocks.style.build.css');
+	wp_enqueue_style('font-awesome-icon-css', 'https://libs.cdnjs.net/font-awesome/4.7.0/css/font-awesome.min.css', array());
+	
     $a = shortcode_atts(array(
         'type' => '1',
         'url' => 'https://github.com/dxz2002/gitCards',

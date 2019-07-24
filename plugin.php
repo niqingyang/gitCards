@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: GitCards
- * Plugin URI: https://daidr.me/archives/app-267.html
+ * Plugin Name: wp-gitcard
+ * Plugin URI: https://github.com/niqingyang/wp-gitcard
  * Description: 在你的文章中插入Git仓库卡片
  * Version: 1.0.0
- * Author: 戴兜
- * Author URI: https://daidr.me
+ * Author: 戴兜、niqingyang
+ * Author URI: https://acme.top
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  * @package CGB
